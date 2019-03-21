@@ -1,0 +1,12 @@
+/*Stylesheet for Intro to CSS*/
+
+/*h1 turns h1 level headings blueviolet*/
+
+h1 {
+    color: blueviolet;
+}
+
+/*removes bullet points from unordered lists*/
+li{
+    list-style: none;
+}
