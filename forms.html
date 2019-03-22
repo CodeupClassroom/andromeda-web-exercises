@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Login form</h2>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <!-- for on label needs to match the id on the input -->
+    <!-- name attributes are the KEY to the key-value pair being in the request -->
+    <label for="username">Username</label>
+    <input id="username" name="email" type="text" autofocus required>
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <label for="keep_logged_in">Keep me logged in
+        <input type="checkbox" name="keep_logged_in" id="keep_logged_in">
+    </label>
+
+    <input type="submit" value="Login">
+    <button type="submit">Login now</button>
+</form>
+
+<hr>
+
+<h2>Search form</h2>
+<form action="https://request-inspector.glitch.me" method="GET">
+    <label for="zipcode">Zipcode</label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode" value="78210">
+
+    <button type="submit">Search</button>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</form>
+
+<a href="https://request-inspector.glitch.me?zipcode=78205"></a>
+
+<h3>Other types of inputs</h3>
+
+<form action="https://request-inspector.glitch.me" method="POST">
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email" placeholder="Input your email address">
+    <br>
+    <label for="color">Color</label>
+    <input type="color" name="color" id="color">
+    <br>
+    <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+    <br>
+    <h3>Checkboxes w the same name attribute allow zero or many selections</h3>
+    <label for="pasta">
+        Pasta
+        <input type="checkbox" name="lunch_prefer" value="pasta" id="pasta">
+    </label>
+    <label for="ramen">
+        Ramen
+        <input type="checkbox" name="lunch_prefer" value="ramen" id="ramen">
+    </label>
+    <label for="salad">
+        Salad
+        <input type="checkbox" name="lunch_prefer" value="salad" id="salad">
+    </label>
+    <hr>
+
+    <h3>Radios force a single selection</h3>
+    <label for="pastaradio">
+        Pasta
+        <input type="radio" name="lunch_selection" value="pasta" id="pastaradio">
+    </label>
+    <label for="ramenradio">
+        Ramen
+        <input type="radio" name="lunch_selection" value="ramen" id="ramenradio">
+    </label>
+    <label for="saladradio">
+        Salad
+        <input type="radio" name="lunch_selection" value="salad" id="saladradio">
+    </label>
+
+    <select disabled name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+
+    <input type="hidden" name="hidden" value="stuff">
+
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>
