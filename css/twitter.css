@@ -62,7 +62,8 @@ a {
 
 .profile-image {
     position: absolute;
-    top: 237px;
+    top: 240px;
+    left: 2em;
 }
 
 .profile-form {
@@ -70,6 +71,14 @@ a {
     line-height: 80px;
 }
 
+.profile-items {
+    padding: 0;
+    list-style-type: none;
+}
+
+.profile-entry {
+    margin: .5em;
+}
 /* 3 column margins */
 aside, main {
     margin: 0 0.5em;
@@ -121,5 +130,15 @@ aside, main {
     border: 1px solid var(--separator-color);
     padding: 0.5em;
     overflow: auto; /** view this change on very small screen */
+}
 
+.media-image {
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
 }
