@@ -22,6 +22,11 @@ header {
     min-height: 300px;
     padding-top: 275px;
 }
+
+.container {
+    margin: 2em;
+}
+
 a {
     color: var(--link-color);
 }
@@ -29,6 +34,8 @@ a {
     background: var(--light-bg);
     width: 100%;
     position: fixed;
+    top: 0px;
+    z-index: 1;
 }
 .nav {
     list-style-type: none;
@@ -63,6 +70,27 @@ a {
     line-height: 80px;
 }
 
+/* 3 column margins */
+aside, main {
+    margin: 0 0.5em;
+}
+
+/* 3 columns: profile, timeline, who to follow*/
+.profile-details {
+    float: left;
+    width: calc(25% - 1em);
+}
+
+.timeline {
+    float: left;
+    width: calc(50% - 1em);
+}
+
+.who-to-follow {
+    float: left;
+    width: calc(25% - 1em);
+
+}
 
 .btn {
     border: 1px solid var(--main-link-color);
@@ -85,4 +113,13 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border: 1px solid var(--separator-color);
+    padding: 0.5em;
+    overflow: auto; /** view this change on very small screen */
+
 }
