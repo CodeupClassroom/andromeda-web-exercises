@@ -21,20 +21,41 @@
     //     console.log('blink');
     // }
 
+    color = prompt("Give a color");
+
+    switch (color.toLowerCase().trim()){
+        case "green":
+            console.log('go');
+            break;
+        case "yellow":
+            console.log('slow');
+            break;
+        case "red":
+            console.log('stop');
+            break;
+        default:
+            console.log('blink');
+            console.log('This is not a valid color');
+    }
+
     var showered = false;
     var soapUsed = false;
 
-    if(showered){
-        if(soapUsed === true){
-            console.log('you smell good');
-        }
-    } else {
-        console.log('you smell funny');
-    }
+    // if(showered){
+    //     if(soapUsed === true){
+    //         console.log('you smell good');
+    //     }
+    // } else {
+    //     console.log('you smell funny');
+    // }
+
+
 
     // var smell = (showered === true) ? "good" : "funny";
     //
     // console.log("You smell " + smell);
+
+
 
 
 </script>
