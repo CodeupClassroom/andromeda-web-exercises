@@ -6,8 +6,33 @@
 </head>
 <body>
 
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+<label for="pass">Password:</label>
+<input type="password" id="pass">
+<button id="login">Login</button>
+
 <script>
     "use strict";
+
+    // Ignore this part for now (._.)
+    document.getElementById("login").addEventListener('click',function(e){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("pass").value;
+
+            // Don't ignore this part :p
+            if(username.toLowerCase() === "fer" ){
+                console.log("Username is valid")
+                if(password === "pass"){
+                    console.log("You have access")
+                } else {
+                    console.log("Password is not valid")
+                }
+            } else {
+                console.error("Username is not valid")
+            }
+
+    });
 
     var color = '';
 
@@ -21,24 +46,24 @@
     //     console.log('blink');
     // }
 
-    color = prompt("Give a color");
+    // color = prompt("Give a color");
+    //
+    // switch (color.toLowerCase().trim()){
+    //     case "green":
+    //         console.log('go');
+    //         break;
+    //     case "yellow":
+    //         console.log('slow');
+    //         break;
+    //     case "red":
+    //         console.log('stop');
+    //         break;
+    //     default:
+    //         console.log('blink');
+    //         console.log('This is not a valid color');
+    // }
 
-    switch (color.toLowerCase().trim()){
-        case "green":
-            console.log('go');
-            break;
-        case "yellow":
-            console.log('slow');
-            break;
-        case "red":
-            console.log('stop');
-            break;
-        default:
-            console.log('blink');
-            console.log('This is not a valid color');
-    }
-
-    var showered = false;
+    var showered = true;
     var soapUsed = false;
 
     // if(showered){
@@ -49,6 +74,13 @@
     //     console.log('you smell funny');
     // }
 
+    if (showered)
+        console.log('you smell good');
+    else
+        console.log('you smell funny');
+
+
+    console.log('last');
 
 
     // var smell = (showered === true) ? "good" : "funny";
