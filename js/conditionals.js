@@ -29,13 +29,19 @@ function messageForEvenOrOdd(number) {
 function plusOneHundMessage(number) {
     return "This number plus 100 is " + (number + 100) + "!";
 }
+
+function isNumeric(number) {
+    var parsedNum = parseFloat(number);
+    var numEval =  !isNaN(parsedNum);
+    return numEval;
+}
+
 function mathGame() {
     var go = confirm("Hey, want to do some math?");
     if (go === true) {
-        var number = parseInt(prompt("Give me a number"));
-        if (isNaN(number)) {
-            alert("You did not enter a number.")
-        } else {
+        var number = prompt("Give me a number");
+        if (isNumeric(number)) {
+            number = parseFloat(number);
             alert(messageForEvenOrOdd(number));
             alert(plusOneHundMessage(number));
             if (number >= 0) {
@@ -43,12 +49,14 @@ function mathGame() {
             } else {
                 alert("This number is negative!")
             }
+        } else {
+            alert("You did not enter a number.")
         }
     }
     return number;
 }
 
-// mathGame();
+mathGame();
 
 /* ########################################################################## */
 
@@ -72,11 +80,12 @@ function mathGame() {
 
 function analyzeColor(color) {
     var message;
-    if (color.toLowerCase() === "blue") {
+    color = color.toLowerCase();
+    if (color === "blue") {
         message = "Blue is the color of the sky."
-    } else if (color.toLowerCase() === "red") {
+    } else if (color === "red") {
         message = "Strawberries are red."
-    } else if (color.toLowerCase() === "cyan") {
+    } else if (color === "cyan") {
         message = "I don't know anything about cyan."
     } else {
         message = "I don't care for " + color + "."
@@ -106,7 +115,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 function analyzeColorSwitch(color) {
     var message;
-    switch(color.toLowerCase()) {
+    color = color.toLowerCase();
+    switch(color) {
         case "blue":
             message = "Blue is the color of the sky.";
             break;
@@ -211,4 +221,4 @@ function promptForTotal(luckyNumber) {
     return discountTotal;
 }
 
-promptForTotal(luckyNumber);
+// promptForTotal(luckyNumber);
