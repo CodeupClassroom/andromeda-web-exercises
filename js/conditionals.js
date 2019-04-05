@@ -16,16 +16,18 @@
  * Can you refactor your code to use functions?
  */
 
-function isEvenOrOdd(number) {
+function messageForEvenOrOdd(number) {
+    var message;
     if (number % 2 === 0) {
-        return alert("This is an even number!");
+        message = "This is an even number!";
     } else {
-        return alert("This is an odd number!")
+        message = "This is an odd number!";
     }
+    return message;
 }
 
-function plusOneHund(number) {
-    return alert("This number plus 100 is " + (number + 100) + "!");
+function plusOneHundMessage(number) {
+    return "This number plus 100 is " + (number + 100) + "!";
 }
 function mathGame() {
     var go = confirm("Hey, want to do some math?");
@@ -34,8 +36,8 @@ function mathGame() {
         if (isNaN(number)) {
             alert("You did not enter a number.")
         } else {
-            isEvenOrOdd(number);
-            plusOneHund(number);
+            alert(messageForEvenOrOdd(number));
+            alert(plusOneHundMessage(number));
             if (number >= 0) {
                 alert("This number is positive!")
             } else {
@@ -206,6 +208,7 @@ function promptForTotal(luckyNumber) {
     var promptedTotal = prompt("What is your total, sir/madam?");
     var discountTotal = calculateTotal(luckyNumber, promptedTotal);
     alert("Your total before discount was $" + promptedTotal + ", but you drew number " + luckyNumber + ", so you pay $" + discountTotal + "!");
+    return discountTotal;
 }
 
 promptForTotal(luckyNumber);
