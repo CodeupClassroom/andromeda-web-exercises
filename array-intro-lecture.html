@@ -24,7 +24,7 @@
             In other words, an array allows us to store and access multiple values (elements)
             through one variable name (array name) and a specific index number.
 
-                Array of animals...
+                Array of animals[]...
                  _______  _______  _______  _______
                 |       ||       ||       ||       |
                 |  DOG  ||  CAT  ||  EGG  ||  EMU  |
@@ -69,9 +69,9 @@
             // pies[0] = "apple";
             // pies[1] = "cherry";
 
+
         // declaring and initializing a high index number
 
-            // pies[10] = "huckleberry";
             // console.log(pies);
 
 
@@ -79,14 +79,14 @@
         // ============================= Counting Array Items
 
             // var pies = ["apple", "cherry", "key lime", "huckleberry"];
-            // var numberOfPies = pies.length;
-            // console.log(numberOfPies);
+
+
+
 
 
         // ============================= Accessing Array Elements
 
             // console.log(pies[100]);
-            // console.log(pies[3]);
 
 
         // ============================= For Loop
@@ -107,21 +107,27 @@
 
         // example
 
-            // for (var i = 0; i < pies.length; i += 1) {
-            //     console.log("I like " + pies[i]);
-            // }
+
+        // var pies = ["apple", "cherry", "key lime", "huckleberry"];
+        //
+        // for (var i = 0; i < pies.length; i += 1) {
+        //     console.log("I love " + pies[i]);
+        // }
+
+
+
 
         // backwards
-            // for (var i = pies.length - 1; i >= 0; i -= 1) {
-            //     console.log("I like " + pies[i]);
-            // }
-            //
-            // console.log(pies);
+        //     for (var i = pies.length - 1; i >= 0; i -= 1) {
+        //         console.log("I like " + pies[i]);
+        //     }
+        //
+        //     console.log(pies);
 
 
 
 
-        // ============================= ForEach Loop
+        // ============================= Foreach Loop
 
         /* SYNTAX
 
@@ -141,7 +147,28 @@
 
 
         // standard syntax
-            // var pies = ["apple", "cherry", "key lime", "huckleberry"];
+        //     var pies = ["apple", "cherry", "key lime", "huckleberry"];
+        //
+        //     pies.forEach(function(pie) {
+        //         console.log(pie);
+        //     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // defining all three parameters
             // pies.forEach(function(element, index, array){
@@ -168,11 +195,15 @@
 
 
         // callback function syntax
-            // function logElements(element) {
-            //     console.log("Element " + element);
-            // }
-            //
-            // pies.forEach(logElements);
+            var pies = ["apple", "cherry", "key lime", "huckleberry"];
+
+            function logElements(asdfasdf, bob, sdf7) {
+                console.log(asdfasdf);
+                console.log(bob);
+                console.log(sdf7);
+            }
+
+            pies.forEach(logElements);
 
     </script>
 
