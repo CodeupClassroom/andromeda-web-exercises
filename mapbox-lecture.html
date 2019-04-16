@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        #map {
+            width: 1200px;
+            height: 80vh;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mapbox API</h1>
+
+    <div id='map'></div>
+
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script>
+        mapboxgl.accessToken = mapboxKey;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v10',
+            center: [-98.4916, 29.4252],
+            zoom: 10
+        });
+
+        var zionAddress = "Zion National Park";
+
+        geocode(zionAddress, mapboxKey).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+        });
+
+        var honCoor = {
+            lng: -157.8583,
+            lat: 21.3069
+        };
+
+        reverseGeocode(honCoor, mapboxKey).then(function(address) {
+            geocode(address, mapboxKey).then(function(coor) {
+                map.setCenter(coor);
+                map.setZoom(13);
+            });
+        });
+
+        // EXAMPLES FROM PREVIOUS LECTURE NOTES AND MINI EXERCISES
+        // var marker = new mapboxgl.Marker()
+        //     .setLngLat([-77.0502, 38.8893])
+        //     .addTo(map);
+        //
+        // var popup = new mapboxgl.Popup()
+        //     .setLngLat([-98.489615, 29.426827])
+        //     .setHTML("<p>A Memorial</p>")
+        //     .addTo(map);
+        //
+        // marker.setPopup(popup);
+        //
+        //
+        // geocode("Paris, Texas", mapboxKey).then(function(result) {
+        //     map.setCenter(result);
+        // });
+        //
+        // reverseGeocode({lng: -98.4861, lat: 29.4260}, mapboxKey).then(function(result) {
+        //     console.log(result);
+        // });
+
+    </script>
+
+</body>
+</html>
