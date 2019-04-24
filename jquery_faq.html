@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery FAQ</title>
+  <style>
+    .invisible {
+      visibility: hidden;
+    }
+    .highlight {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>Olympic National Park FAQ</h1>
+  <button id="toggle">View All</button>
+  <dl>
+    <dt>Do I need to make reservations to visit Olympic National Park?</dt>
+    <dd class="invisible">No, you don't need reservations to visit Olympic National Park. However, if you plan to spend
+      the
+      night in
+      or around the park, you should have reservations for lodging, camping, or backpacking.</dd>
+    <hr>
+    <dt>How do I get to Olympic National Park?</dt>
+    <dd class="invisible">You can find driving directions on the Directions and Transportation page.</dd>
+    <hr>
+    <dt>What is there to see and do in Olympic National Park?</dt>
+    <dd class="invisible">Explore our Things to Do page to find the perfect activities for your visit!</dd>
+    <hr>
+    <dt>When is the best time of year to visit Olympic National Park?</dt>
+    <dd class="invisible">It depends what you're looking for! While most people visit during summer, there are unique
+      things
+      things to
+      see when visiting at other times throughout the year. You can find more information on our Plan Your Visit page.</dd>
+    <hr>
+    <dt>Washington State law does not require motorists to carry tire chains over the major
+      mountain passes – why is it different here?</dt>
+    <dd class="invisible">During extreme weather conditions, Washington state does require chains, even
+      on all-wheel and four-wheel drive vehicles, as noted above.
+      In addition, Hurricane Ridge is unlike Washington’s mountain passes in a variety
+      of ways. At 5,242 feet above sea level Hurricane Ridge is significantly higher in
+      elevation than most of Washington’s road-accessible passes and is located on a
+      mountain summit, rather than in a more sheltered pass. Further, the Hurricane
+      Ridge Road is a park access road and not intended to be as wide or have as many
+      safety pullouts as a state highway. </dd>
+    <hr>
+    <dt>Is there an entrance fee to get into the park?</dt>
+    <dd class="invisible">Yes, there is a small entrance fee of $30.00 per vehicle for a 7 day pass, $25.00 per
+      motorcycle
+      for a
+      7 day
+      pass, and $15.00 per person (hikers, bicyclists or pedestrians. Youth 15 and under are admitted free of charge).</dd>
+    <hr>
+    <dt>What type of terrain can I expect when visiting Olympic Park?</dt>
+    <dd class="invisible">The diverse terrain at Olympic National Park contains jagged mountains, glaciers, lush rain
+      forests, and
+      beaches that are covered with driftwood.  This is a park where you can experience several types of vacations in one!</dd>
+    <hr>
+    <dt>What are some popular activities at Olympic?</dt>
+    <dd class="invisible">Nature lover’s come here to hike, bike, and take photographs.  Other activities include
+      boating,
+      fishing,
+      and water sports.</dd>
+    <hr>
+    <dt>What is the weather at Olympic National Park like?</dt>
+    <dd class="invisible">Because of this remarkably diverse landscape, climatic changes within the park are abrupt.
+      The
+      western
+      side
+      of the park has the wettest weather in the United States, averaging nearly 12 to 14 feet of precipitation each year. The eastern side of the park, which lies in the rain shadow of the mountains, is the driest area on the Pacific Coast north of Los Angeles.</dd>
+    <hr>
+    <dt>Question not on this list?</dt>
+    <dd class="invisible">Do you have a question that's not answered here? Send us an e-mail and we'll consider
+      adding it
+      to
+      this
+      list.</dd>
+  </dl>
+
+  <script src="js/jquery-2.2.4.js"></script>
+  <script>
+    "use strict";
+    $(document).ready(function(){
+        $('#toggle').click(function(e){
+           $('dd').toggleClass('invisible');
+        });
+
+        $('dt').click(function(e){
+            $(this).addClass('highlight');
+        });
+    });
+  </script>
+</body>
+</html>
