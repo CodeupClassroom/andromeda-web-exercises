@@ -78,6 +78,34 @@
       list.</dd>
   </dl>
 
+  <hr>
+  
+  <h3>Sequoia National Park</h3>
+  <ul>
+    <li>Sequoia was the first park created to protect a living organism.</li>
+    <li>Before Kings Canyon, there was General Grant National Park.</li>
+    <li>Fire and proactive forest management play a unique role in the parks.</li>
+    <li>Sequoia is home to the tallest mountain in the lower 48.</li>
+  </ul>
+  
+  <h3>Yosemite National Park</h3>
+  <ul>
+    <li>Yosemite might be our nation’s 3rd national park, but it sparked the idea of national parks.</li>
+    <li>Yosemite’s granite rock formations glow like fire at sunset.</li>
+    <li>The park’s diverse landscape supports more than 400 species.</li>
+    <li>Yosemite is home to one of the tallest waterfalls in the world.</li>
+  </ul>
+  
+  <h3>Zion National Park</h3>
+  <ul>
+    <li>Before it was a national park, Zion was a national monument, and it’s name wasn’t Zion.</li>
+    <li>Zion is home to one of the greatest engineering feats of modern times.</li>
+    <li>Zion is more than just slot canyons and amazing hikes -- it also protects archeological sites.</li>
+    <li>Zion’s Angels Landing provides spectacular views, but it’s one of the world’s most dangerous.</li>
+  </ul>
+
+  <button id="last-thing">Last Thing</button>
+
   <script src="js/jquery-2.2.4.js"></script>
   <script>
     "use strict";
@@ -88,6 +116,18 @@
 
         $('dt').click(function(e){
             $(this).addClass('highlight');
+        });
+
+        $('#last-thing').click(function(e){
+            $('ul').each(function(index, element){
+                $(element).children().last().css('background-color', 'yellow');
+            });
+        });
+        $('h3').click(function(e){
+            $(this).next().children().css('font-weight', 'bold');
+        });
+        $('li').click(function(e){
+            $(this).parent().children().first().css('color', 'blue');
         });
     });
   </script>
