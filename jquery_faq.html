@@ -10,9 +10,24 @@
     .highlight {
       background-color: pink;
     }
+    li {
+      display: none;
+    }
+    h2 {
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <div id="newsletter-cta">
+    <h1>WOULD YOU LIKE TO SIGN UP FOR OUR NEWSLETTER?!</h1>
+    <p>
+      Monocle ipsum dolor sit amet craftsmanship eclectic uniforms Melbourne intricate carefully curated. Premium vibrant Melbourne hub charming Asia-Pacific emerging Zürich elegant. Elegant pintxos delightful, perfect tote bag impeccable bespoke Lufthansa global Gaggenau charming. Cutting-edge Ettinger elegant, hub Helsinki signature craftsmanship handsome St Moritz.
+      <br><br>
+      Click <span id="x">X</span> to close.
+    </p>
+  </div>
+  <h2>Be sure to register for more functionality and nature facts!</h2>
   <h1>Olympic National Park FAQ</h1>
   <button id="toggle">View All</button>
   <dl>
@@ -124,11 +139,17 @@
             });
         });
         $('h3').click(function(e){
-            $(this).next().children().css('font-weight', 'bold');
+            $(this).next().children()
+                    .css('font-weight', 'bold')
+                    .slideToggle();
         });
         $('li').click(function(e){
             $(this).parent().children().first().css('color', 'blue');
         });
+        $("#x").click(function(e) {
+            $("#newsletter-cta").hide();
+        });
+        $("h2").delay(8000).fadeIn();
     });
   </script>
 </body>
