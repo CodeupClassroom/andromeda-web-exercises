@@ -12,13 +12,13 @@
 
 <main class="container mt-5">
     <h1 class="my-5">Intro to AJAX</h1>
-    <form method="GET" action="https://hookb.in/7ZayBeWLoeCnqnDEljzk">
+    <form method="GET" action="https://hookb.in/nP9Qkl3xeQUz0zGKdrya">
         <div class="input-group">
             <input placeholder="Enter username" class="form-control" type="text" name="username">
         </div>
         <button class="btn btn-success my-2">Submit</button>
     </form>
-    <a href="https://hookbin.com/7ZayBeWLoeCnqnDEljzk">Some Link</a>
+    <a href="https://hookb.in/nP9Qkl3xeQUz0zGKdrya">Some Link</a>
 </main>
 
 <script
@@ -36,25 +36,43 @@
 
         // simple request
 
-            // $.ajax('./data/orders.json'); // jQuery request object
+            // $.ajax('data/orders.json'); // jQuery request object
 
-            // $.ajax("./data/orders.json").done(function(responseData){
+            // $.ajax("data/orders.json").done(function(responseData){
+            //     console.log(responseData);
+            // });
+
+
+        // $.ajax('data/orders.json'); // jQuery request object
+
+            // $.ajax("data/orders.json").done(function(responseData){
             //     console.log(responseData);
             // });
 
             // DOESN'T WORK
             //     var responseData;
-            //     $.ajax('./data/orders.json').done(function(data) {
+            //     $.ajax('data/orders.json').done(function(data) {
             //         responseData = data;
+            //         console.log(responseData);
             //     }); // .done()
             //
             //     console.log(responseData);
 
         // simple API request
 
-        // $.ajax("https://swapi.co/api/films").done(function(data){
-        //     console.log(data);
-        // });
+            // $.ajax("https://swapi.co/api/films").done(function(data){
+            //     console.log(data);
+            // });
+
+        // .fail()
+
+            // $.ajax('data/orders.json').done(function(data) {
+            //     console.log(data);
+            // }).fail(function(jqXhr, status, error) {
+            //     console.log("request failed!");
+            //     console.log(status);
+            //     console.log(error);
+            // });
 
 
         // single argument with .done(), .fail() and .always() methods
@@ -71,6 +89,7 @@
             //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
             // }).fail(function(jqXhr, status, error) {
             //     console.log("Request failed! " + status);
+            //     console.log(error);
             // }).always(function() {
             //     console.log("Request made.");
             // });
@@ -90,19 +109,22 @@
 
         // Storing returned jQuery XML HTTP Response object
 
-            // var jqXhr = $.ajax("https://swapi.co/api/films", {
+            // var jqXhr = $.ajax("https://swai.co/api/films", {
             //     "type": "GET",
             //     "data": {
             //         "search": "A New Hope"
             //     }
             // });
-            //
+
             // console.log(jqXhr);
-            //
+
             // jqXhr.done(function(data) {
             //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
             // });
-
+            //
+            // jqXhr.fail(function() {
+            //     console.log("request failed");
+            // });
 
         // GET short-hand method
 
@@ -113,6 +135,14 @@
             // }).done(function(data) {
             //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
             // });
+
+            // $.ajax('https://hookb.in/nP9Qkl3xeQUz0zGKdrya', {
+            //     "type": "POST",
+            //     "data": JSON.stringify({
+            //         "username": "jreich"
+            //     })
+            // });
+
 
     });
 
