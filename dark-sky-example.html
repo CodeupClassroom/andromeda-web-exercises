@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Sky API Example</title>
+</head>
+<body>
+
+    <h1>Dark Sky API Example</h1>
+
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="js/keys.js"></script>
+    <script>
+        "use strict";
+
+        var corsUrl = 'https://cors-anywhere.herokuapp.com/';
+        var darkSkyUrl = 'https://api.darksky.net/forecast/';
+        var darkSkyApiKey = darkSkyAPI;
+
+        var lat = 29.4241;
+        var lng = -98.4936;
+
+        var icons = {
+            "clear-day": "icon/Sun.svg",
+            "clear-night": "icon/Moon-Full.svg",
+            "rain": "icon/Cloud-Rain.svg",
+            "snow": "icon/Snowflake.svg",
+            "sleet": "icon/Snowflake.svg",
+            "wind": "icon/Wind.svg",
+            "fog": "icon/Cloud-Fog.svg",
+            "cloudy": "icon/Cloud.svg",
+            "partly-cloudy-day": "icon/Cloud-Sun.svg",
+            "partly-cloudy-night": "icon/Cloud-Moon.svg"
+        };
+
+        $.get(corsUrl + darkSkyUrl + darkSkyApiKey + "/" + lat + "," + lng).done(function(data) {
+            $('body').html('<img src="' + icons[data.daily.data[0].icon] + '">');
+        });
+
+
+    </script>
+
+</body>
+</html>
