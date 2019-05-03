@@ -45,6 +45,31 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="js/jquery-selectors-exc.js"></script>
+    <script>
+
+        "use strict";
+        //
+        // $('h1').click(function() {
+        //     $(this).css("background", "blue");
+        // });
+
+        $('p').dblclick(function(e) {
+            $(e.target).css('font-size', '18px');
+        });
+
+        function turnRed(e) {
+            $(e.target).css('color', 'red');
+        }
+
+        function turnBlack(e) {
+            $(e.target).css('color', 'black');
+        }
+
+        $('li').hover(turnRed, turnBlack);
+
+
+
+
+    </script>
 </body>
 </html>

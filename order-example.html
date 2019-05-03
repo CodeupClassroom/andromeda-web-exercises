@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders Example</title>
+    <style>
+        .lds-circle {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            background: #000;
+            animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        @keyframes lds-circle {
+            0%, 100% {
+                animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            }
+            0% {
+                transform: rotateY(0deg);
+            }
+            50% {
+                transform: rotateY(1800deg);
+                animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            }
+            100% {
+                transform: rotateY(3600deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+    <h1>Orders</h1>
+
+
+    <div id="orders">
+        <div class="lds-circle"></div>
+        <div class="order">
+            <h2>Item Ordered: SOME_ITEM</h2>
+            <p>Item #: SOME_NUMBER</p>
+            <p>Ordered By: SOME_USER</p>
+        </div>
+
+        <div class="order">
+            <h2>Item Ordered: SOME_ITEM</h2>
+            <p>Item #: SOME_NUMBER</p>
+            <p>Ordered By: SOME_USER</p>
+        </div>
+
+        <div class="order">
+            <h2>Item Ordered: SOME_ITEM</h2>
+            <p>Item #: SOME_NUMBER</p>
+            <p>Ordered By: SOME_USER</p>
+        </div>
+    </div>
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script>
+        "use strict";
+
+        function ordersHtml(orders) {
+            var html = '';
+
+            orders.forEach(function(order) {
+                html += '<div class="order">';
+                html += '<h2>Item Ordered: ' + order.itemOrdered + '</h2>';
+                html += '<p>Item #: ' + order.orderNumber + '</p>';
+                html += '<p>Ordered By: ' + order.orderedBy + '</p>';
+                html += '</div>';
+            });
+
+            return html;
+        }
+
+        $.ajax('data/orders.json').done(function(orders) {
+            $('#orders').html(ordersHtml(orders));
+        }).fail(function() {
+            console.log("ERROR!");
+        });
+
+
+    </script>
+
+</body>
+</html>
