@@ -16,7 +16,7 @@
 
         "use strict";
 
-        // const song = document.getElementById('song');
+        const song = document.getElementById('song');
 
 
         // A Song from Callback Hell...
@@ -30,6 +30,9 @@
         //     song.append(lyrics);
         //     setTimeout(callback, 1500);
         // }
+        //
+        //
+        //
         //
         // const sing = () => {
         //     singLyrics('All a-', .5, function() {
@@ -52,45 +55,50 @@
         // };
 
 
+
+
+
+
+
         // A Simpler Song to Read (I promise)... but still sung terribly...
 
-        // function singLyrics(lyrics, pitch) {
-        //     return new Promise((res) => {
-        //         var lyric = new SpeechSynthesisUtterance(lyrics);
-        //         lyric.pitch = pitch;
-        //         lyric.rate = .7;
-        //         speechSynthesis.speak(lyric);
-        //         song.append(lyrics);
-        //         setTimeout(res, 1500);
-        //     });
-        // }
-        //
-        // const singPromises = () => {
-        //     return singLyrics('All a-', .5)
-        //         .then(() => {
-        //             return singLyrics('round the', 1);
-        //         })
-        //         .then(() => {
-        //             return singLyrics(' mulberry', 1.5);
-        //         })
-        //         .then(() => {
-        //             return singLyrics(' bush', 1);
-        //         })
-        //         .then(() => {
-        //             return singLyrics(' the monkey', .5);
-        //         })
-        //         .then(() => {
-        //             return singLyrics(' chased', 1);
-        //         })
-        //         .then(() => {
-        //             return singLyrics(' the wea-', 1.5);
-        //         })
-        //         .then(() => {
-        //             return singLyrics(' sel', 1);
-        //         })
-        // };
+        function singLyrics(lyrics, pitch) {
+            return new Promise((res) => {
+                var lyric = new SpeechSynthesisUtterance(lyrics);
+                lyric.pitch = pitch;
+                lyric.rate = .7;
+                speechSynthesis.speak(lyric);
+                song.append(lyrics);
+                setTimeout(res, 1500);
+            });
+        }
 
-        // document.getElementById('sing-btn').addEventListener('click', singPromises);
+        const singPromises = () => {
+            return singLyrics('All a-', .5)
+                .then(() => {
+                    return singLyrics('round the', 1);
+                })
+                .then(() => {
+                    return singLyrics(' mulberry', 1.5);
+                })
+                .then(() => {
+                    return singLyrics(' bush', 1);
+                })
+                .then(() => {
+                    return singLyrics(' the monkey', .5);
+                })
+                .then(() => {
+                    return singLyrics(' chased', 1);
+                })
+                .then(() => {
+                    return singLyrics(' the wea-', 1.5);
+                })
+                .then(() => {
+                    return singLyrics(' sel', 1);
+                })
+        };
+
+        document.getElementById('sing-btn').addEventListener('click', singPromises);
 
     </script>
 

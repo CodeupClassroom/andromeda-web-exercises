@@ -8,8 +8,8 @@
     <main>
         <h1>Intro to JavaScript Promises</h1>
 
-        <!--<h3>Articles relevant to the local weather conditions...</h3>-->
-        <!--<div id="articles"></div>-->
+        <h3>Articles relevant to the local weather conditions...</h3>
+        <div id="articles"></div>
 
     </main>
 <script src="js/keys.js"></script>
@@ -41,22 +41,22 @@
 // ============ Using Promises with jQuery version 3+
 
     // jQuery AJAX methods
-        // $.ajax('https://swapi.co/api/people/1')
-        //     .done(function(data) {
-        //         console.log(data);
-        //     })
-        //     .fail(function(jqXHR, message) {
-        //         console.log(message);
-        //     });
+    //     $.ajax('https://swapi.co/api/people/1')
+    //         .done(function(data) {
+    //             console.log(data);
+    //         })
+    //         .fail(function(jqXHR, message) {
+    //             console.log(message);
+    //         });
 
     // Using promise methods (jQuery version 3.x.x and after)
-        // $.ajax('https://swapi.co/api/people/1')
-        //     .then(function(data) {
-        //         console.log(data);
-        //     })
-        //     .catch(function(jqXHR, message) {
-        //         console.log(message);
-        //     });
+    //     $.ajax('https://swai.co/api/people/1')
+    //         .then(function(data) {
+    //             console.log(data);
+    //         })
+    //         .catch(function(jqXHR, message) {
+    //             console.log(message);
+    //         });
 
 
 
@@ -65,91 +65,143 @@
     // let goodKid = true;
     //
     // // a promise is made to do something
-    // const getCake = new Promise((resolve, reject) => {
-    //    if (goodKid) {
-    //        resolve("Here is some cake");
-    //    } else {
-    //        reject("Bad. No cake. :(");
-    //    }
-    // });
     //
-    // console.log(getCake); // promise object
+    // const getCake = new Promise((res, rej) => {
+    //     if (goodKid) {
+    //         res('You get cake!');
+    //     } else {
+    //         rej('You don\'t cake, bad child.');
+    //     }
+    // });
     //
     // // once the promise is resolved or rejected, take additional action
     //
     // getCake.then((data) => {
     //     console.log(data);
     // }).catch((err) => {
-    //    console.log(err);
+    //     console.log(err);
     // });
-
-
-// ============ Promise.resolve()
-
-    // see curriculum
 
 
 // ============ !! WAIT EXERCISE !!
 
     // see curriculum
 
+
+
+
+// ============ Promise.resolve()
+
+    // Promise.resolve('one').then((one) => {
+    //     console.log(one);
+    //     return 'two';
+    // }).then((two) => {
+    //     console.log(two);
+    //     return 'three';
+    // }).then((three) => {
+    //     console.log(three);
+    // });
+
+
+
 // ============ Fetch API
 
-    // fetch('https://swapi.co/api/people/1')
-    //     .then(res => res.json())
-    //     .then(console.log);
+// jQuery AJAX request example
+// $.ajax('https://swapi.co/api/people/1')
+//     .done(function(data) {
+//         console.log(data);
+//     })
+//     .fail(function(jqXHR, message) {
+//         console.log(message);
+//     });
 
-    // fetch('https://hookb.in/6JyZPJeoG6i2Z20mYwwV', {
-    //     method: 'POST',
-    //     body: JSON.stringify({name: 'Ron', age: 33})
-    // }).then(console.log);
+// Fetch API GET example
+//     fetch('https://swapi.co/api/people/1')
+//         .then((response) => {
+//             return response.json();
+//         })
+//         .then((data) => {
+//             // build html
+//         })
+//         .catch(console.log);
+//
+//
+//     fetch('https://hookb.in/kxLqNKarPNtepeoxWgnZ', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             username: "bill",
+//             password: "pass123"
+//         })
+//     })
+//         .then(console.log)
+//         .catch(console.log);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  ============ NY Times Articles Based on Forecast of Current Location
-//
-//     function getForecast(coord) {
-//         return fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${darkSkyAPI}/${coord.lat},${coord.lng}`)
-//             .then(res => res.json())
-//     }
-//
-//     function getCurrentLocation() {
-//         return new Promise(function(res, rej) {
-//             navigator.geolocation.getCurrentPosition(function(pos) {
-//                 res({"lat": pos.coords.latitude, "lng": pos.coords.longitude});
-//             });
-//         });
-//     }
-//
-//     function getLocalForecast() {
-//         return getCurrentLocation()
-//             .then(getForecast)
-//     }
-//
-//     function getNYTimesArticle(search) {
-//         const apiKey = apiKeyNYT;
-//         return fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search}&api-key=${apiKey}`)
-//             .then(res => res.json());
-//     }
-//
-//     function buildWeatherHtml(articles) {
-//         return articles.reduce((accum, curr) => {
-//             return accum += `
-//                 <article>
-//                     <a href="${curr.web_url}">${curr.headline.main}</a>
-//                 </article>
-//             `
-//         }, "");
-//     }
-//
-//     getLocalForecast()
-//         .then(forecast => {
-//             console.log(forecast.currently.summary);
-//             return forecast.currently.summary
-//         })
-//         .then(getNYTimesArticle)
-//         .then(data => {
-//             document.getElementById("articles").innerHTML = buildWeatherHtml(data.response.docs);
-//         });
+
+    // function getForecast(coord) {
+    //     return fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${darkSkyAPI}/${coord.lat},${coord.lng}`)
+    //         .then(res => res.json())
+    // }
+    //
+    //
+    // function getCurrentLocation() {
+    //     return new Promise(function(res, rej) {
+    //         navigator.geolocation.getCurrentPosition(function(pos) {
+    //             res({"lat": pos.coords.latitude, "lng": pos.coords.longitude});
+    //         });
+    //     });
+    // }
+    //
+    // function getLocalForecast() {
+    //     return getCurrentLocation()
+    //         .then(getForecast)
+    // }
+    //
+    // function getNYTimesArticle(search) {
+    //     const apiKey = apiKeyNYT;
+    //     return fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search}&api-key=${apiKey}`)
+    //         .then(res => res.json());
+    // }
+    //
+    // function buildWeatherHtml(articles) {
+    //     return articles.reduce((accum, curr) => {
+    //         return accum += `
+    //             <article>
+    //                 <a href="${curr.web_url}">${curr.headline.main}</a>
+    //             </article>
+    //         `
+    //     }, "");
+    // }
+    //
+    // getLocalForecast()
+    //     .then(forecast => {
+    //         console.log(forecast.currently.summary);
+    //         return forecast.currently.summary
+    //     })
+    //     .then(getNYTimesArticle)
+    //     .then(data => {
+    //         document.getElementById("articles").innerHTML = buildWeatherHtml(data.response.docs);
+    //     });
 
 
 
@@ -182,7 +234,10 @@
     //     console.log(data[0]);
     //     console.log(data[1]);
     //     console.log("You now have a coffee!");
+    // }).catch((err) => {
+    //     console.log(err)
     // });
+
 
 
 // ============ Promise.race()
@@ -198,6 +253,8 @@
     // const getColor = () => Promise.race([color1Promise, color2Promise]);
     //
     // getColor().then(response => response.json()).then(data => console.log(data));
+    //
+
 
 
 
